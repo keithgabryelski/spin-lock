@@ -1,26 +1,3 @@
-#spin-lock
-
-Some time in the early 1990s a friend (Mike Ditto) and I (Keith Gabryelski) worked on this code.  I've recently reconstituted the algorithm from memory.  Here it is for those to use as needed.
-
-A user level spin lock that does not require exchange instruction.
-
-.example code
-
-```c
-struct spin_lock_state *state = spin_allocate((key_t)42, NULL);
-int pid = getpid();
-
-spin_lock(state, pid)
-
-// critical code here
-
-spin_unlock(state, pid);
-
-```
-
-.second example (provided)
-
-```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -62,17 +39,3 @@ main(int argc, char *argv[])
 
   exit(0);
 }
-```
-
-compile the above code and then run in two different windows:
-
-.first window
-
-```
-./spin-lock-test spin-lock-test.c 1
-```
-
-.second window
-```
-./spin-lock-test spin-lock-test.c 2
-```
