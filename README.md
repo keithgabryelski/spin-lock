@@ -1,8 +1,14 @@
 # spin-lock
 
-Some time in the early 1990s a friend (Mike Ditto) and I (Keith Gabryelski) worked on this code.  I've recently reconstituted the algorithm from memory.  Here it is for those to use as needed.
+Some time in the early 1990s a friend (Mike Ditto) and I (Keith
+Gabryelski) worked on this code.  I've recently reconstituted the
+algorithm from memory.  Here it is for those to use as needed.
 
-A user level spin lock that does not require exchange instruction.
+A user level spin lock that does not require an exchange instruction.
+
+This code is provided just to document a method I've not seen since we
+first thought of it.  It may be useful to some -- it may make others
+think of better solutions.
 
 ## example code
 
